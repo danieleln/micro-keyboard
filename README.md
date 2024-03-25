@@ -1,5 +1,5 @@
 # micro-keyboard
-micro-keyboard is an 8-key HID keyboard emulation.
+micro-keyboard is an 8-key, Arduino-powered HID keyboard. 
 ![micro-keyboard image](./micro-keyboard.jpeg)
 
 
