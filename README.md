@@ -11,7 +11,7 @@ pages:
 - Page 2 emulates keys F1 to F7
 - Page 3 emulates keys F8 to F14
 
-The number of pages and emulated keys can be easily customized.
+Emulated keys can be easily customized.
 
 
 The Arduino Micro built-in LED blinks when switching between pages.
@@ -19,32 +19,32 @@ It blinks a number of times equal to the page number.
 
 
 To understand why I built this pretty weird project, see the paragraph
-[Some backstory](#some-backstory).
+[some backstory](#some-backstory).
 For more details on the technical side, see the paragraph
-[Implementation notes](#implementation-notes).
+[implementation notes](#implementation-notes).
 
 
 
 ## Some backstory
-I had an issue with my laptop. For some reason, it doesn't recognize
+I have an issue with my laptop. For some reason, it doesn't recognize
 the built-in keyboard before booting the OS (it's probably a driver
-issue but that's not my area of expertise).
-It does however recognize external keyboards I have at home.
+issue, but that's not my area of expertise).
+However, it does recognize external keyboards I have at home.
 
 It's never been much of an issue. I rarely have to enter the BIOS when
 I'm not at home.
 However, a couple of weeks ago I had to install PSPICE on my laptop for
-the ElectroMagnetic Compatibility course I'm taking at the university.
-Unfortunately, that is a Windows-only software (but my main OS is Ubuntu).
+the Electromagnetic Compatibility course I'm taking at the university.
+Unfortunately, that is a Windows-only software (my main OS is Ubuntu).
 I went for a dual boot cause it's a ten years old laptop and running
 Windows on a VM was a bit too heavy.
 
 
 Back to the issue.
-When I'm at home, I code with an external monitor and keyboard.
-So, I didn't discover the issue till it was too late: without an
-external keyboard, I can't choose which OS to boot in.
-GRUB just boots in the first OS on the list.
+At home, I code with an external monitor and keyboard.
+So, I didn't discover the issue till it was too late: I can't control
+GRUB with the built-in keyboard.
+GRUB just boots the first OS on the list.
 
 
 The two "immediate" solutions are:
@@ -52,8 +52,8 @@ The two "immediate" solutions are:
 - Boot in whichever the first OS on the list is. Change the boot order.
   Reboot the system. While it might work, it would take a good 20 minutes
   or so on my laptop.
-- Carry an external keyboard to the university. An overkill just to
-  choose which OS to boot in.
+- Carry an external keyboard to the university. It doesn't fit in my
+  backpack.
 
 So, I decided to build a tiny custom "keyboard" I could easily
 carry around.
@@ -67,7 +67,7 @@ are the reasons why I chose to code it this way.
 
 
 First of all, I had to use a [third-party HID library](https://github.com/NicoHood/HID)
-cause the built-in `Keyboard.h` "library" was also not recognized at boot.
+cause the built-in `Keyboard.h` library was also not recognized at boot.
 
 
 This was a last-minute solution.
